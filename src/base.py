@@ -89,6 +89,18 @@ class Base:
         self.df['standard_hours']=operating
         self.df['holidays']=holidays
         self.df.drop(columns='operating_hours', axis=1, inplace=True)
+        #-----------------------------correct_states-------------------------
+        s_list=[]
+        for i in range(len(self.df['states'])):
+            if len(self.df['states'].iloc[i].split(','))>1:
+                s=self.df['states'].iloc[i].split(',')
+
+                s_list.append(list([j for j in s]))
+            else:
+                s_list.append(self.df['states'].loc[i].split(',')[0])
+        self.df['states'] = s_list
+
+
     #cleaning columns 
     def column_fix(self,column,name='name'):
             for i in range(len(self.df[column])):
