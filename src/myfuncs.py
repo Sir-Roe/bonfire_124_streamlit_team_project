@@ -3,7 +3,7 @@ def locator (df,col,val):
     '''
     This is used a function to create unique
     filters to return all records where a column
-    has a matching val for any poassed dataframe.
+    has a matching val for any passed dataframe.
     Use the returned list as the .iloc filter
     '''
     a_list=[]
@@ -48,7 +48,7 @@ def stringConvert (df,col):
     a_list=[]
     for i in range(len(df[col])):
         if type(df[col].iloc[i])==list:
-            a_list.append(','.join(j for j in df[col].iloc[i]))
+            a_list.append(', '.join(j for j in df[col].iloc[i]))
         else:
             a_list.append(str(df[col].iloc[i]))
     #return the list of locations to be used as a .iloc filter
