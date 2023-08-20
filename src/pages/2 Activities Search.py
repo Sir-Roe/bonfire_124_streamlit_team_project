@@ -7,6 +7,9 @@ import pandas as pd
 filepath = os.path.join(Path(__file__).parents[1])
 sys.path.insert(0,filepath)
 
+#sweet image
+st.image('https://www.nps.gov/articles/images/NPS-Transparent-Logo.png',width=80)
+
 from tomongo import ToMongo
 import myfuncs as mf
 # Creating the ToMongo Class and pinging the data from the MongoDB
@@ -34,6 +37,6 @@ statez = st.selectbox('States where activities are available:', placeholder="All
 
 #conditional to make create different outputs
 if statez == "All States":
-    st.dataframe(pd.DataFrame({"Park Names": dff.full_name.tolist(),"States":dff.pl.tolist()}), width=800)
+    st.dataframe(pd.DataFrame({"Park Names": dff.full_name.tolist(),"States":dff.pl.tolist()}), width=800,hide_index=True)
 else:
-    st.dataframe(pd.DataFrame({"Park Names": dff['full_name'].iloc[mf.locator(dff,'states',statez)].tolist(),"States":dff['pl'].iloc[mf.locator(dff,'states',statez)].tolist()}), width=800)
+    st.dataframe(pd.DataFrame({"Park Names": dff['full_name'].iloc[mf.locator(dff,'states',statez)].tolist(),"States":dff['pl'].iloc[mf.locator(dff,'states',statez)].tolist()}), width=800, hide_index=True)

@@ -41,7 +41,7 @@ class Base:
 
     def clean_data(self):
         #dropping columns that had low data or unneccessary data
-        self.df.drop(axis=1,columns = ['fees','latLong','entrancePasses','directionsInfo','directionsUrl','addresses','images','weatherInfo','name','contacts'],inplace= True)
+        self.df.drop(axis=1,columns = ['fees','latLong','entrancePasses','directionsInfo','directionsUrl','addresses','weatherInfo','name','contacts'],inplace= True)
         #rename old columns
         name_change = [{'fullName':'full_name'},{'parkCode':'park_code'},{'entranceFees':'entrance_fees'},{'operatingHours':'operating_hours'}]
         for name in name_change:

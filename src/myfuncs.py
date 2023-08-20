@@ -54,5 +54,13 @@ def stringConvert (df,col):
     #return the list of locations to be used as a .iloc filter
     return a_list
  
+#sort week
 
-
+def hour_sort(list):
+    h_dict={"monday":'',"tuesday":'',"wednesday":'',"thursday":'',"friday":'',"saturday":'',"sunday":''}   
+    try:
+        for j in list.keys():
+            h_dict[j]=list[j]
+    except:
+        pass
+    return h_dict

@@ -8,6 +8,9 @@ import sys
 filepath=os.path.join(Path(__file__).parents[1])
 sys.path.insert(0, filepath)
 
+#crispy image
+st.image('https://www.nps.gov/articles/images/NPS-Transparent-Logo.png',width=80)
+
 from tomongo import ToMongo
 import myfuncs as mf
 c=ToMongo()
