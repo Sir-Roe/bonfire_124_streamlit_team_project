@@ -15,13 +15,21 @@ c=ToMongo()
 cursor=c.park_info.find()
 df =  pd.DataFrame(list(cursor))
 
+st.set_page_config(
+    page_title="Parks Info", #<------- Change this to the page you're currently on when copying/pasting after your imports
+    page_icon="⛰️",
+    menu_items={
+        'About': """This is an app developed by 5 Peers at Coding Temple. Here are our
+        Github accounts: \n\rHarrison : https://github.com/Acronine, \n\rJoshua : https://github.com/TechNTalk,
+        \n\rLogan : https://github.com/Sir-Roe, \n\rVaidic: https://github.com/tvaidic"""}
+)
 
 st.image('https://www.nps.gov/articles/images/NPS-Transparent-Logo.png',width=80)
 
 st.title('Find A Park')
 
 pk_list = df.full_name.tolist()
-select= st.selectbox('type a park', options=pk_list)
+select= st.selectbox('Search any National Park', options=pk_list)
 if select:
     st.subheader(select)
     

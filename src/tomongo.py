@@ -34,6 +34,7 @@ class ToMongo(Base):
     #    self.park_info.insert_many([self.df.to_dict()])
 
     def upload_one_by_one(self):
+        #delete old db on every re upload
         self.park_info.drop()
         # Initialize the instance of our inherited class:
         Base.__init__(self)

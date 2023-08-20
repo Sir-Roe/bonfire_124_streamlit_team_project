@@ -8,6 +8,15 @@ import sys
 filepath=os.path.join(Path(__file__).parents[1])
 sys.path.insert(0, filepath)
 
+st.set_page_config(
+    page_title="Parks by State", #<------- Change this to the page you're currently on when copying/pasting after your imports
+    page_icon="⛰️",
+    menu_items={
+        'About': """This is an app developed by 5 Peers at Coding Temple. Here are our
+        Github accounts: \n\rHarrison : https://github.com/Acronine, \n\rJoshua : https://github.com/TechNTalk,
+        \n\rLogan : https://github.com/Sir-Roe, \n\rVaidic: https://github.com/tvaidic"""}
+)
+
 #crispy image
 st.image('https://www.nps.gov/articles/images/NPS-Transparent-Logo.png',width=80)
 
